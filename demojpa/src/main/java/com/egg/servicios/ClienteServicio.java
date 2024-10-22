@@ -1,5 +1,7 @@
 package com.egg.servicios;
 
+import java.util.List;
+
 import com.egg.entidades.Cliente;
 import com.egg.persistencia.ClienteDAO;
 
@@ -55,4 +57,55 @@ public class ClienteServicio {
         return null;
     }
 
+
+
+
+
+
+
+
+
+
+    // Método para listar todos los clientes
+    
+    public List<Cliente> obtenerTodosLosClientes() throws Exception {
+        return daoCliente.listarTodos(); // Llamada al método listarTodos() del DAO
+    }
+
+    // Método para listar e imprimir los clientes
+    public void listarClientes() throws Exception {
+        List<Cliente> clientes = obtenerTodosLosClientes(); // Obtener todos los clientes
+        for (Cliente cliente : clientes) {
+            System.out.println("ID: " + cliente.getIdCliente() + 
+                                ", Nombre: " + cliente.getNombreCliente() + 
+                                ", Apellido: " + cliente.getApellidoContacto() + 
+                                ", Ciudad: " + cliente.getCiudad() +
+                                ", País: " + cliente.getPais());
+        }
+    }
+
+
+
+
+
+
+
+    public void listarClientes(String nombreRecibido) throws Exception {
+        List<Cliente> clientesNombre = daoCliente.listarClientesPorNombre(nombreRecibido);
+        imprimirLista(clientesNombre);
+    }
+
+
+
+    //✏️Actividad Listar con parámetros 
+    
+    // Imprimo solo lgunos datos de la BBDD
+    public void imprimirLista(List<Cliente> listaRecibida) {
+        for (Cliente unitarioCliente : listaRecibida) {
+            System.out.println(unitarioCliente.getIdCliente() + "-" + unitarioCliente.getApellidoContacto() + "-"
+                    + unitarioCliente.getNombreContacto());
+        }
+
+
+    }
 }
