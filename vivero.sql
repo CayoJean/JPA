@@ -1,6 +1,5 @@
 CREATE SCHEMA `vivero-jpa` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ;
 
-
 INSERT INTO oficina(id_oficina, codigo_oficina,ciudad,pais,region,codigo_postal,telefono) VALUES (1, 'BCN-ES','Barcelona','España','Barcelona','08019','+34 93 3561182');
 INSERT INTO oficina(id_oficina, codigo_oficina,ciudad,pais,region,codigo_postal,telefono)  VALUES (2, 'BOS-USA','Boston','EEUU','MA','02108','+1 215 837 0825');
 INSERT INTO oficina(id_oficina, codigo_oficina,ciudad,pais,region,codigo_postal,telefono)  VALUES (3, 'LON-UK','Londres','Inglaterra','EMEA','EC2N 1HN','+44 20 78772041');
